@@ -1,7 +1,7 @@
 Crafty.defineScene("Loading", function() {
     Crafty.background("#AAA");
     Crafty.e("2D, DOM, Text")
-          .attr({ w: 200, h: 50, x: 300, y: 280 })
+          .attr({ w: 200, h: 50, x: 16 * 14, y: 280 })
           .text("Loading...")
           .textFont({ size: '20px', weight: 'bold' })
           .textAlign("center")
