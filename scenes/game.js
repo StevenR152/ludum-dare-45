@@ -1,7 +1,6 @@
 function create_tile(x, y) {
 	return Crafty.e('2D, DOM, Color, maintile')
 		.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
-		.color('#F00');
 }
 
 Crafty.defineScene("Game", function() {
