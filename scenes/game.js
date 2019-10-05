@@ -1,19 +1,53 @@
+Crafty.c("BreakingTile", {
+	init : function () {
+		this.requires("breakingtile")
+	},
+
+	fade : function () {
+		this.removeComponent("breakingtile")
+		this.addComponent("fadingtile")
+	},
+
+	solidify : function () {
+		this.removeComponent("breakingtile")
+		this.removeComponent("BreakingTile")
+		this.addComponent("SolidTile")
+	}
+})
+
+Crafty.c("SolidTile", {
+	init : function () {
+		this.removeComponent("BreakingTile")
+		this.removeComponent("breakingtile")
+	    this.removeComponent("Collision")
+		this.requires("fulltile")
+	}
+})
+
 function create_tile(x, y) {
-	return Crafty.e('Tile, 2D, DOM, Color, Collision, maintile')
+	var tile = Crafty.e('Tile, 2D, DOM, Color, Collision, BreakingTile')
 		.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
 		.checkHits('Tile') // check for collisions with entities that have the Solid component in each frame
 	    .bind("HitOn", function(hitData) {
-	    	Crafty.trigger("TILES_CONNECTED")
 	    	this.trigger("TILES_CONNECTED")
-	        Crafty.log("Collision with Solid entity occurred for the first time.");
 	    })
 	    .bind("TILES_CONNECTED", function () {
-	    	Crafty.log("remove component")
-	    	this.removeComponent("maintile")
-	    	this.addComponent("fulltile")
+	    	this.solidify()
+	    	Crafty.trigger("TILES_PROMOTED")
 	    })
+	Crafty.trigger("CREATED_TILE", tile);
+	return tile
 }
 
+var trail = [];
+var trailMax = 6
+Crafty.bind("CREATED_TILE", function (tile) {
+	trail.unshift(tile);
+	if(trail.length > trailMax) {
+		var e = trail.pop();
+		e.fade();
+	}
+})
 var map = [];
 
 Crafty.defineScene("Game", function() {
@@ -28,7 +62,6 @@ Crafty.defineScene("Game", function() {
 
 	console.log(map)
 	var redSquare = create_tile(GAME_SCREEN_X_MIDDLE_IN_TILES, GAME_SCREEN_Y_MIDDLE_IN_TILES);
-
 
 	var generator = Crafty.e("2D, DOM, Keyboard")
 		.attr({
@@ -62,6 +95,7 @@ Crafty.defineScene("Game", function() {
 	  });
 
 Crafty.viewport.clampToEntities = false;
+Crafty.viewport.scale(0.7);
 Crafty.one("CameraAnimationDone", function() {
     Crafty.viewport.follow(generator, 0, 0);
 });
