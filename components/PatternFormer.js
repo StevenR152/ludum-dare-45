@@ -16,8 +16,8 @@ Crafty.c("PatternFormer", {
 			this._pattern.push([1])
 			this.py += 1;
 		} else if(this.py >= 0 && this.py < this._pattern.length) {
-			// A movement within the bounds of the array, increase the counter on that square.
-			this._pattern[this.py][this.px] += 1;
+			// A movement within the bounds of the array, set counter to 2 because now its solid tile.
+			this._pattern[this.py][this.px] = 2;
 		}
 
 		console.log(this._pattern)
