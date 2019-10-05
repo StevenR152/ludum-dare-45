@@ -29,6 +29,7 @@ Crafty.defineScene("Game", function() {
 	console.log(map)
 	var redSquare = create_tile(GAME_SCREEN_X_MIDDLE_IN_TILES, GAME_SCREEN_Y_MIDDLE_IN_TILES);
 
+
 	var generator = Crafty.e("2D, DOM, Keyboard")
 		.attr({
 			x: GAME_SCREEN_X_MIDDLE_IN_TILES * TSIZE_X,
@@ -59,4 +60,10 @@ Crafty.defineScene("Game", function() {
 		    }
 			console.log(map)
 	  });
+
+Crafty.viewport.clampToEntities = false;
+Crafty.one("CameraAnimationDone", function() {
+    Crafty.viewport.follow(generator, 0, 0);
+});
+Crafty.viewport.centerOn(generator, 0);
 });
