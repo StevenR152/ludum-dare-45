@@ -1,5 +1,6 @@
 Crafty.defineScene("ShowPuzzle", function () {
 	var level = getLevel();
+	Crafty.e("Background")
 
 	for (var i = 0; i < level.length; i++) {
 		var row = level[i];
@@ -8,14 +9,15 @@ Crafty.defineScene("ShowPuzzle", function () {
 
 			if(level[i][j] != 0)
 				var tile = create_tile(j, i);
+			
 			if(level[i][j] == 2) 
 				tile.solidify()
+
 			if(i == Math.floor(level.length/2) && j == Math.floor(row.length/2)) {
 				setupCamera(tile);
 			}
 		}
 	}
-
 	Crafty.e("Delay").delay(function () {
         Crafty.scene('Game');
 	}, 2500)

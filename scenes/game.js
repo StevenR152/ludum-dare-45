@@ -1,5 +1,7 @@
 
 Crafty.defineScene("Game", function() {
+	
+	Crafty.e("Background")
 	var redSquare = create_tile(0, 0);
 	var patternChecker = Crafty.e("PatternFormer");
 	var generator = Crafty.e("2D, DOM, Keyboard")

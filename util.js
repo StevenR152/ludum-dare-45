@@ -4,8 +4,8 @@ function create_tile(x, y) {
 }
 
 function setupCamera(target) {
-	Crafty.viewport.clampToEntities = false;
-	Crafty.viewport.scale(0.7);
+	Crafty.viewport.clampToEntities = true;
+	Crafty.viewport.scale(1);
 	Crafty.one("CameraAnimationDone", function() {
 	    Crafty.viewport.follow(target, 0, 0);
 	});
