@@ -18,12 +18,16 @@ Crafty.defineScene("Game", function() {
 		.bind('KeyDown', function(e) {
 			if (e.key == Crafty.keys.LEFT_ARROW) {
 				this.x -= TSIZE_X;
+				create_tile(this.x / TSIZE_X, this.y / TSIZE_Y)
 			} else if (e.key == Crafty.keys.RIGHT_ARROW) {
 				this.x += TSIZE_X;
+				create_tile(this.x / TSIZE_X, this.y / TSIZE_Y)
 			} else if (e.key == Crafty.keys.UP_ARROW) {
 				this.y -= TSIZE_Y;
+				create_tile(this.x / TSIZE_X, this.y / TSIZE_Y)
 		    } else if (e.key == Crafty.keys.DOWN_ARROW) {
 				this.y += TSIZE_Y;
+				create_tile(this.x / TSIZE_X, this.y / TSIZE_Y)
 		    }
 	  });
 });
