@@ -1,6 +1,8 @@
 Crafty.defineScene("Game", function() {
 	var level = getLevel();
 	Crafty.e("Background")
+	var lx = 1;
+	var ly = 1;
 
 	for (var i = 0; i < level.length; i++) {
 		var row = level[i];
@@ -8,7 +10,7 @@ Crafty.defineScene("Game", function() {
 			var col = row[j];
 
 			if(level[i][j] != 0)
-				var tile = create_tile(j, i);
+				var tile = create_grey_tile(j - lx, i - ly);
 			
 			if(level[i][j] == 2) 
 				tile.solidify()
@@ -18,7 +20,7 @@ Crafty.defineScene("Game", function() {
 	var redSquare = create_tile(0, 0)
 	var patternChecker = Crafty.e("PatternFormer");
 	var generator = Crafty.e("2D, DOM, Keyboard, Color")
-		.color("red")
+		// .color("red")
 		.attr({
 			x: 0,
 			y: 0,

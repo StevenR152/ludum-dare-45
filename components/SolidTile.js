@@ -6,3 +6,9 @@ Crafty.c("SolidTile", {
 		this.requires("fulltile")
 	}
 })
+
+Crafty.c("GreySolidTile", {
+	init : function () {
+		this.requires("greyfulltile")
+	}
+})

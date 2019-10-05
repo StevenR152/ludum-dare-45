@@ -17,3 +17,20 @@ Crafty.c("BreakingTile", {
 		this.addComponent("SolidTile")
 	}
 })
+
+Crafty.c("GreyBreakingTile", {
+	init : function () {
+		this.requires("greybreakingtile")
+	},
+
+	fade : function () {
+		this.removeComponent("greybreakingtile")
+		this.addComponent("fadingtile")
+	},
+
+	solidify : function () {
+		this.removeComponent("greybreakingtile")
+		this.removeComponent("GreyBreakingTile")
+		this.addComponent("GreySolidTile")
+	}
+})

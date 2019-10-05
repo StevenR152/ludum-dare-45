@@ -2,7 +2,12 @@ function create_tile(x, y) {
 	return Crafty.e('Tile')
 		.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
 		.origin("center")
+}
 
+function create_grey_tile(x, y) {
+	return Crafty.e('PuzzleTile')
+		.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
+		.origin("center")
 }
 
 function setupCamera(target) {
