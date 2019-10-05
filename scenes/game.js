@@ -4,12 +4,12 @@ function create_tile(x, y) {
 }
 
 Crafty.defineScene("Game", function() {
-	var redSquare = create_tile(GAME_SCREEN_X_MIDDLE_IN_TILES, GAME_SCREEN_Y_MIDDLE_IN_TILES);
+	var redSquare = create_tile(0, 0);
 
-	var generator = Crafty.e("2D, DOM, Keyboard")
+	var generator = Crafty.e("2D, DOM, Keyboard, PatternFormer")
 		.attr({
-			x: GAME_SCREEN_X_MIDDLE_IN_TILES * TSIZE_X,
-			y: GAME_SCREEN_Y_MIDDLE_IN_TILES * TSIZE_Y,
+			x: 0,
+			y: 0,
 			w: TSIZE_X / 5,
 			h: TSIZE_Y / 5
 		})
@@ -20,15 +20,19 @@ Crafty.defineScene("Game", function() {
 			if (e.key == Crafty.keys.LEFT_ARROW) {
 				this.x -= TSIZE_X;
 				create_tile(x - 1, y)
+				this.recordAction(-1, 0)
 			} else if (e.key == Crafty.keys.RIGHT_ARROW) {
 				this.x += TSIZE_X;
 				create_tile(x + 1, y)
+				this.recordAction(1, 0)
 			} else if (e.key == Crafty.keys.UP_ARROW) {
 				this.y -= TSIZE_Y;
 				create_tile(x, y - 1)
+				this.recordAction(0, -1)
 		    } else if (e.key == Crafty.keys.DOWN_ARROW) {
 				this.y += TSIZE_Y;
 				create_tile(x, y + 1)
+				this.recordAction(0, 1)
 		    }
 
 	  });
