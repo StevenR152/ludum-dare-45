@@ -1,8 +1,10 @@
 Crafty.defineScene("Loading", function() {
     Crafty.background("#38353B");
     Crafty.e("Background")
+
+  
     Crafty.e("2D, DOM, Text")
-          .attr({ w: 200, h: 50, x: 16 * 14, y: 280 })
+          .attr({ w: 0, h: 50, x: 270, y: 220 })
           .text("Loading...")
           .textFont({ size: '20px', weight: 'bold' })
           .textAlign("center")
@@ -18,4 +20,4 @@ Crafty.defineScene("Loading", function() {
     },  function (e) {
       console.log("Crafty Load Error", e);
     });
-  });
+  })
