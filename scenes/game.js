@@ -53,7 +53,13 @@ Crafty.defineScene("Game", function() {
          	}
 		    if(patternChecker.checkWin()) {
 		    	currentLevel += 1;
-         		Crafty.scene('Game');
+		    	if(currentLevel <= levels.length) {
+		    		console.log("Next level loading...")
+         			Crafty.scene('Game');
+		    	} else {
+		    		console.log("End of Game")
+		    		Crafty.scene('End');
+		    	}
 		    }
 	  });
 

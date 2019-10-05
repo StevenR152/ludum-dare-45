@@ -1,10 +1,10 @@
-Crafty.defineScene("Loading", function() {
-    Crafty.background("#38353B");
-    Crafty.e("Background")
+Crafty.defineScene("Start", function () {
+	Crafty.background("#38353B");
+    Crafty.e("StartBackground")
 
   
     Crafty.e("2D, DOM, Text")
-          .attr({ w: 0, h: 50, x: 270, y: 220 })
+          .attr({ w: 0, h: 50, x: 270, y: 120 })
           .text("Loading...")
           .textFont({ size: '20px', weight: 'bold' })
           .textAlign("center")
@@ -14,10 +14,10 @@ Crafty.defineScene("Loading", function() {
   	Crafty.load(gameAssets, function(){
        setTimeout(function () {
          Crafty.scene('Game');
-       }, 1000);
+       }, 2000);
     },  function () {
       console.log("Crafty Load Issue");
     },  function (e) {
       console.log("Crafty Load Error", e);
     });
-  })
+})

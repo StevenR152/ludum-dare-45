@@ -12,4 +12,4 @@ var GAME_SCREEN_Y_MIDDLE_IN_TILES = Math.floor(GAME_SCREEN_HEIGHT_IN_TILES / 2);
 
 Crafty.init(GAME_SCREEN_WIDTH,GAME_SCREEN_HEIGHT, document.getElementById('game'));
 
-Crafty.scene("Loading");
+Crafty.scene("Start");
