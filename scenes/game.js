@@ -8,8 +8,8 @@ Crafty.defineScene("Game", function() {
 
 	var generator = Crafty.e("2D, DOM, Color, Keyboard")
 		.attr({
-			x: GAME_SCREEN_X_MIDDLE_IN_TILES * TSIZE_X + TSIZE_X / 2 - (TSIZE_X / 6 / 2),
-			y: GAME_SCREEN_Y_MIDDLE_IN_TILES * TSIZE_Y + TSIZE_Y / 2 - (TSIZE_Y / 4 / 2),
+			x: GAME_SCREEN_X_MIDDLE_IN_TILES * TSIZE_X,
+			y: GAME_SCREEN_Y_MIDDLE_IN_TILES * TSIZE_Y,
 			w: TSIZE_X / 5,
 			h: TSIZE_Y / 5
 		})
