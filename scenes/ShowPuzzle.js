@@ -18,6 +18,6 @@ Crafty.defineScene("ShowPuzzle", function () {
 
 	Crafty.e("Delay").delay(function () {
         Crafty.scene('Game');
-	}, 400)
+	}, 2500)
 
 })
