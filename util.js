@@ -9,7 +9,7 @@ function setupCamera(target) {
 	Crafty.one("CameraAnimationDone", function() {
 	    Crafty.viewport.follow(target, 0, 0);
 	});
-	Crafty.viewport.centerOn(target, 0);
+	Crafty.viewport.centerOn(target, 1400);
 }
 
 function checkArrays( arrA, arrB ){

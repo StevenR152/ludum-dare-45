@@ -14,7 +14,7 @@ Crafty.defineScene("ShowPuzzle", function () {
 				tile.solidify()
 
 			if(i == Math.floor(level.length/2) && j == Math.floor(row.length/2) ) {
-				setupCamera(tile);
+				// setupCamera(tile);
 			}
 		}
 	}
