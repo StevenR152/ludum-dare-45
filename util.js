@@ -1,13 +1,15 @@
 function create_tile(x, y) {
 	return Crafty.e('Tile')
 		.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
+		.origin("center")
+
 }
 
 function setupCamera(target) {
 	Crafty.viewport.clampToEntities = false;
 	Crafty.viewport.scale(1);
 	Crafty.one("CameraAnimationDone", function() {
-	    Crafty.viewport.follow(target, 0, 0);
+	    // Crafty.viewport.follow(target, -0.5 * TSIZE_X, -0.5 * TSIZE_Y);
 	});
 	Crafty.viewport.centerOn(target, 1400);
 }

@@ -1,7 +1,7 @@
 Crafty.c("PatternFormer", {
 	_gridSize : 30,
-	px : 0,
-	py : 0,
+	px : 1,
+	py : 1,
 
 	init : function () {
 		this._pattern = [],

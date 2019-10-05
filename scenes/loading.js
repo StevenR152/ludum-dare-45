@@ -13,7 +13,7 @@ Crafty.defineScene("Loading", function() {
     // Game Assets would be a list of images, but this tutorial doesn't use them.
   	Crafty.load(gameAssets, function(){
        setTimeout(function () {
-         Crafty.scene('ShowPuzzle');
+         Crafty.scene('Game');
        }, 1000);
     },  function () {
       console.log("Crafty Load Issue");
