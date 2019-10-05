@@ -1,10 +1,10 @@
 Crafty.c("PatternFormer", {
 	_gridSize : 30,
-	_pattern : [],
 	px : 0,
 	py : 0,
 
 	init : function () {
+		this._pattern = [],
 		this.px = this._gridSize / 2;
 		this.py = this._gridSize / 2;
 		for (var i = 0; i < this._gridSize; i++) {
@@ -49,7 +49,7 @@ Crafty.c("PatternFormer", {
 		console.log(this.simplify())
 		console.log(getLevel())
 		console.log(this._simplifyGrid(getLevel()))
-		var win = checkArrays(this.simplify(), this._simplifyGrid(getLevel()));
+		var win = checkArrays(this._simplifyGrid(getLevel()), this.simplify());
 		console.log(win)
 		return win
 	},
