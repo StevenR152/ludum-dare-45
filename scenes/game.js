@@ -1,7 +1,3 @@
-function create_tile(x, y) {
-	return Crafty.e('Tile')
-		.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
-}
 
 Crafty.defineScene("Game", function() {
 	var redSquare = create_tile(0, 0);
@@ -34,13 +30,8 @@ Crafty.defineScene("Game", function() {
 				create_tile(x, y + 1)
 				this.recordAction(0, 1)
 		    }
-
+		    this.checkWin()
 	  });
 
-	Crafty.viewport.clampToEntities = false;
-	Crafty.viewport.scale(0.7);
-	Crafty.one("CameraAnimationDone", function() {
-	    Crafty.viewport.follow(generator, 0, 0);
-	});
-	Crafty.viewport.centerOn(generator, 0);
+	setupCamera(generator);
 });
