@@ -1,8 +1,10 @@
 Crafty.defineScene("Game", function() {
-	var level = getLevel();
+	var level = getLevel().map;
+	var levelStart = getLevel().start
+
 	Crafty.e("Background")
-	var lx = 1;
-	var ly = 1;
+	var lx = levelStart.x;
+	var ly = levelStart.y;
 
 	for (var i = 0; i < level.length; i++) {
 		var row = level[i];

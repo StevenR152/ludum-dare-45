@@ -14,7 +14,7 @@ function setupCamera(target) {
 	Crafty.viewport.clampToEntities = false;
 	Crafty.viewport.scale(1);
 	Crafty.one("CameraAnimationDone", function() {
-	    // Crafty.viewport.follow(target, -0.5 * TSIZE_X, -0.5 * TSIZE_Y);
+	    Crafty.viewport.follow(target, 0, 0);
 	});
 	Crafty.viewport.centerOn(target, 1400);
 }

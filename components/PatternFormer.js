@@ -47,9 +47,9 @@ Crafty.c("PatternFormer", {
 	checkWin : function () {
 		console.log("checking win...")
 		console.log(this.simplify())
-		console.log(getLevel())
-		console.log(this._simplifyGrid(getLevel()))
-		var win = checkArrays(this._simplifyGrid(getLevel()), this.simplify());
+		console.log(getLevel().map)
+		console.log(this._simplifyGrid(getLevel().map))
+		var win = checkArrays(this._simplifyGrid(getLevel().map), this.simplify());
 		console.log(win)
 		return win
 	},
