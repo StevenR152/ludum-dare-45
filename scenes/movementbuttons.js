@@ -1,5 +1,5 @@
 function movementButtons() {
-	var buttonSize = 125;
+	var buttonSize = 128;
 	Crafty.c("MovementButton", {
 		init : function () {
 			this.requires("2D, Tween, DOM, Color, Mouse, HUD")
@@ -22,7 +22,7 @@ function movementButtons() {
 			return this;
 		}
 	})
-	
+
 	var paddingFromEdge = 30;
 	var rightButton = Crafty.e("MovementButton, rightbutton")
 		.fixedPosition(GAME_SCREEN_WIDTH - buttonSize - paddingFromEdge, GAME_SCREEN_HEIGHT/2 - buttonSize/2)

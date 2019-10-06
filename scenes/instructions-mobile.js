@@ -1,6 +1,7 @@
-Crafty.defineScene("Controls", function () {
-	Crafty.e("Background")
+Crafty.defineScene("InstructionsMobile", function () {
+	Crafty.e("MobileInstructions")
 	Crafty.background("#38353B");
+
 	movementButtons();
 	Crafty("MovementButton").each(function () {
 		this.w = this.w;
@@ -10,8 +11,8 @@ Crafty.defineScene("Controls", function () {
 
 	Crafty.e("2D, DOM, Mouse, Keyboard, Color")
 		.attr({
-			x: 0, //-0.5* GAME_SCREEN_WIDTH,
-		 	y: 0, //-0.5*GAME_SCREEN_HEIGHT,
+			x: 0, 
+		 	y: 0,
 		 	w: GAME_SCREEN_WIDTH,
 		 	h: GAME_SCREEN_HEIGHT
 		 })

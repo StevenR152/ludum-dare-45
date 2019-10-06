@@ -6,9 +6,9 @@ Crafty.defineScene("Start", function () {
   	Crafty.load(gameAssets, function(){
        setTimeout(function () {
         if(Crafty.mobile) {
-          Crafty.scene('Controls');
+          Crafty.scene('InstructionsMobile');
         } else {
-          Crafty.scene('Game')
+          Crafty.scene('InstructionsDesktop')
         }
        }, 2000);
     },  function () {

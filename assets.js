@@ -18,32 +18,32 @@ var gameAssets = {
         },
 
         "assets/images/resetbutton.png": {
-            "tile": 93,
-            "tileh": 93,
+            "tile": 96,
+            "tileh": 96,
             "map": { "resetbutton": [0,0] }
         },
 
         "assets/images/upbutton.png": {
-            "tile": 125,
-            "tileh": 125,
+            "tile": 128,
+            "tileh": 128,
             "map": { "upbutton": [0,0] }
         },
 
         "assets/images/leftbutton.png": {
-            "tile": 125,
-            "tileh": 125,
+            "tile": 128,
+            "tileh": 128,
             "map": { "leftbutton": [0,0] }
         },
 
         "assets/images/rightbutton.png": {
-            "tile": 125,
-            "tileh": 125,
+            "tile": 128,
+            "tileh": 128,
             "map": { "rightbutton": [0,0] }
         },
 
         "assets/images/downbutton.png": {
-            "tile": 125,
-            "tileh": 125,
+            "tile": 128,
+            "tileh": 128,
             "map": { "downbutton": [0,0] }
         },
 
