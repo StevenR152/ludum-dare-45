@@ -82,10 +82,14 @@ Crafty.defineScene("Game", function() {
 				create_tile(x, y + 1)
 				patternChecker.recordAction(0, 1)
 		    } else if(action == "RESET") {
+				Crafty.audio.play("clearscreen", 1, 0.5);
+
 		    	Crafty.scene('Game');
          	}
 		    if(patternChecker.checkWin()) {
 		    	currentLevel += 1;
+				Crafty.audio.play("levelcomplete", 1, 0.5);
+
 		    	if(currentLevel <= levels.length) {
 		    		Crafty.log("Next level loading...")
          			Crafty.scene('Game');

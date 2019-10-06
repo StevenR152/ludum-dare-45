@@ -2,7 +2,7 @@ function movementButtons() {
 	var buttonSize = 128;
 	Crafty.c("MovementButton", {
 		init : function () {
-			this.requires("2D, Tween, DOM, Color, Mouse, HUD")
+			this.requires("2D, Tween, DOM, Mouse, HUD")
 			this.attr({
 				x: 200,
 				y: 200,
@@ -11,7 +11,6 @@ function movementButtons() {
 				alpha: 1
 			})
 			this.fixedPosition(GAME_SCREEN_WIDTH - buttonSize - 30, GAME_SCREEN_HEIGHT/2 - buttonSize/2)
-			this.color("lightblue")
 			Crafty.one("CameraAnimationDone", function() {
 		    	this.tween({alpha: 0.2}, 2000)
 			}.bind(this));
@@ -50,7 +49,6 @@ function movementButtons() {
 
 	var resetButton = Crafty.e("MovementButton, resetbutton")
 		.fixedPosition(paddingFromEdge, paddingFromEdge)
-		.color("red")
 		.attr({w: buttonSize / 4 * 3, h: buttonSize / 4 * 3})
 		.bind("Click", function () {
 				Crafty.trigger("UserAction", "RESET")

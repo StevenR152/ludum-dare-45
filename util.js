@@ -1,5 +1,7 @@
 function create_tile(x, y) {
 	var tile = Crafty.e('Tile');
+	
+		Crafty.audio.play("clickbasic", 1, 0.5);
 		tile.origin("center")
 		tile.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
 	return tile;

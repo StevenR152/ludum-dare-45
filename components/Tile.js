@@ -4,6 +4,7 @@ Crafty.c("Tile", {
 		this.z = 10
 		this.checkHits('Tile') // check for collisions with entities that have the Solid component in each frame
 	    this.bind("HitOn", function(hitData) {
+			Crafty.audio.play("clickfull", 1, 0.5);
 	    	this.trigger("TILES_CONNECTED")
 	    })
 	    this.bind("Spawn", function() {

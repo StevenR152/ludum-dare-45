@@ -2,6 +2,11 @@
 // 
 var gameAssets = {
     "audio": {
+        "ambient-background-slow" : ["assets/sounds/deliberate-thought-by-kevin-macleod.mp3"],
+        "clickbasic" : ["assets/sounds/clickbasic.wav"], 
+        "clickfull" : ["assets/sounds/clickfull.wav"], 
+        "levelcomplete" : ["assets/sounds/levelcomplete.wav"], 
+        "clearscreen" : ["assets/sounds/clearscreen.wav"], 
     },
     "images": [],
     "sprites": {
