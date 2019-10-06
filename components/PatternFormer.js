@@ -1,3 +1,5 @@
+var wincheckdebug = false;
+
 Crafty.c("PatternFormer", {
 	_gridSize : 30,
 	px : 1,
@@ -45,12 +47,14 @@ Crafty.c("PatternFormer", {
 	},
 
 	checkWin : function () {
-		console.log("checking win...")
-		console.log(this.simplify())
-		console.log(getLevel().map)
-		console.log(this._simplifyGrid(getLevel().map))
 		var win = checkArrays(this._simplifyGrid(getLevel().map), this.simplify());
-		console.log(win)
+		if(wincheckdebug) {
+			console.log("checking win...")
+			console.log(this.simplify())
+			console.log(getLevel().map)
+			console.log(this._simplifyGrid(getLevel().map))
+			console.log(win)
+		}
 		return win
 	},
 

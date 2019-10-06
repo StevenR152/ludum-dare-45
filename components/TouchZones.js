@@ -11,7 +11,7 @@ Crafty.c("TouchZones", {
 		// this.color("yellow")
 		this.z = 1000;
 		this.bind('Click', function(MouseEvent){
-			console.log('clicked', MouseEvent.clientX, MouseEvent.clientY);
+			console.log('clicked', MouseEvent);
 			var xdiff = MouseEvent.clientX - 1100;
 			var ydiff = MouseEvent.clientY - 240;
 			console.log('diff', xdiff, ydiff)
