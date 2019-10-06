@@ -25,8 +25,8 @@ function checkArrays( arrA, arrB ){
     if(arrA.length !== arrB.length) return false;
 
 
-    for(var i=0;i<arrA.length;i++){
-    	for (var j = 0; j < arrA[i].length; j++) {
+    for(var i=0;i<arrA.length || i<arrB.length;i++){
+    	for (var j = 0; j < arrA[i].length || j < arrB[i].length; j++) {
     		if(arrA[i][j]!==arrB[i][j]) return false;
     	}
     }
