@@ -1,7 +1,8 @@
 function create_tile(x, y) {
-	return Crafty.e('Tile')
-		.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
-		.origin("center")
+	var tile = Crafty.e('Tile');
+		tile.origin("center")
+		tile.attr({x: x * TSIZE_X, y: y * TSIZE_Y, w: TSIZE_X, h: TSIZE_Y})
+	return tile;
 }
 
 function create_grey_tile(x, y) {

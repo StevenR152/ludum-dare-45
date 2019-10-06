@@ -20,6 +20,8 @@ Crafty.defineScene("Game", function() {
 	}
 
 	var redSquare = create_tile(0, 0)
+	redSquare.alpha = 0;
+	redSquare.trigger("Spawn")
 	var patternChecker = Crafty.e("PatternFormer");
 	var generator = Crafty.e("2D, DOM, Keyboard, Color")
 		// .color("red")

@@ -22,7 +22,7 @@ Crafty.c("StartBackground", {
 Crafty.c("EndBackground", {
     init: function () {
         this.requires('2D, DOM, Image');
-        this.attr({x: 0, y: 0, w: 624, h: 624});
+        this.attr({x: 0, y: -2 * TSIZE_Y, w: 624, h: 624});
         this.image("assets/images/end-screen.png");
         this.vx -= 1;
     }
