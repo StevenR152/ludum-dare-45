@@ -18,7 +18,7 @@ Crafty.c("PuzzleTile", {
 		this.z = 5;
 		this.alpha = 0
 		Crafty.one("CameraAnimationDone", function() {
-	    	this.tween({alpha: 0.7}, 4000)
+	    	this.tween({alpha: 1}, 3000)
 		}.bind(this));
    		
 	}
