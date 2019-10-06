@@ -12,7 +12,7 @@ function create_grey_tile(x, y) {
 
 function setupCamera(target) {
 	Crafty.viewport.clampToEntities = false;
-	Crafty.viewport.scale(0.8);
+	Crafty.viewport.scale(0.4);
 	Crafty.one("CameraAnimationDone", function() {
 	    Crafty.viewport.follow(target, 0, 0);
 	});
