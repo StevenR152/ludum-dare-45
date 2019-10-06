@@ -1,7 +1,6 @@
 Crafty.defineScene("Start", function () {
 	Crafty.background("#38353B");
-    Crafty.e("StartBackground")
-    Crafty.viewport.scale(0.6)
+    Crafty.e("StartBackground") 
   
     Crafty.e("2D, DOM, Text")
           .attr({ w: 0, h: 50, x: 270, y: 120 })
