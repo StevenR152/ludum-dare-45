@@ -19,11 +19,28 @@ function createGreyTiles(levelObject) {
 	}
 }
 
+function user_input_to_action_mapper_listener() {
+	Crafty.bind('KeyDown', function(e) {
+		if (e.key == Crafty.keys.LEFT_ARROW) {
+			Crafty.trigger("UserAction", "MOVE_LEFT")
+		} else if (e.key == Crafty.keys.RIGHT_ARROW) {
+			Crafty.trigger("UserAction", "MOVE_RIGHT")
+		} else if (e.key == Crafty.keys.UP_ARROW) {
+			Crafty.trigger("UserAction", "MOVE_UP")
+	    } else if (e.key == Crafty.keys.DOWN_ARROW) {
+			Crafty.trigger("UserAction", "MOVE_DOWN")
+	    } else if(e.key == Crafty.keys.SPACE) {
+			Crafty.trigger("UserAction", "RESET")
+	 	}
+	});
+}
+
 Crafty.defineScene("Game", function() {
 	Crafty.e("Background")
+	Crafty.e("TouchZones")
 
 	createGreyTiles(getLevel())
-	var redSquare = create_tile(0, 0)
+ 	var redSquare = create_tile(0, 0)
 		redSquare.alpha = 0;
 		redSquare.trigger("Spawn")
 
@@ -37,40 +54,41 @@ Crafty.defineScene("Game", function() {
 			h: 48
 		})
 		.origin("center")
-		.bind('KeyDown', function(e) {
-			var x = this.x / TSIZE_X;
-			var y = this.y / TSIZE_Y;
+	Crafty.bind("UserAction", function (action) {
+			var x = generator.x / TSIZE_X;
+			var y = generator.y / TSIZE_Y;
 
-			if (e.key == Crafty.keys.LEFT_ARROW) {
-				this.x -= TSIZE_X;
+			if (action == "MOVE_LEFT") {
+				generator.x -= TSIZE_X;
 				create_tile(x - 1, y)
 				patternChecker.recordAction(-1, 0)
-			} else if (e.key == Crafty.keys.RIGHT_ARROW) {
-				this.x += TSIZE_X;
+			} else if (action == "MOVE_RIGHT") {
+				generator.x += TSIZE_X;
 				create_tile(x + 1, y)
 				patternChecker.recordAction(1, 0)
-			} else if (e.key == Crafty.keys.UP_ARROW) {
-				this.y -= TSIZE_Y;
+			} else if (action == "MOVE_UP") {
+				generator.y -= TSIZE_Y;
 				create_tile(x, y - 1)
 				patternChecker.recordAction(0, -1)
-		    } else if (e.key == Crafty.keys.DOWN_ARROW) {
-				this.y += TSIZE_Y;
+		    } else if (action == "MOVE_DOWN") {
+				generator.y += TSIZE_Y;
 				create_tile(x, y + 1)
 				patternChecker.recordAction(0, 1)
-		    } else if(e.key == Crafty.keys.SPACE) {
+		    } else if(action == "RESET") {
          		Crafty.scene('Game');
          	}
 		    if(patternChecker.checkWin()) {
 		    	currentLevel += 1;
 		    	if(currentLevel <= levels.length) {
-		    		console.log("Next level loading...")
+		    		Crafty.log("Next level loading...")
          			Crafty.scene('Game');
 		    	} else {
-		    		console.log("End of Game")
+		    		Crafty.log("End of Game")
 		    		Crafty.scene('End');
 		    	}
 		    }
-	  });
+		})
 
+	user_input_to_action_mapper_listener();
 	setupCamera(generator);
 });
