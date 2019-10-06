@@ -19,8 +19,8 @@ function createGreyTiles(levelObject) {
 	}
 }
 
-function user_input_to_action_mapper_listener() {
-	Crafty.bind('KeyDown', function(e) {
+function user_input_to_action_mapper_listener(entity) {
+	entity.bind('KeyDown', function(e) {
 		if (e.key == Crafty.keys.LEFT_ARROW) {
 			Crafty.trigger("UserAction", "MOVE_LEFT")
 		} else if (e.key == Crafty.keys.RIGHT_ARROW) {
@@ -93,6 +93,9 @@ Crafty.defineScene("Game", function() {
 	Crafty.e("Background")
 	// Crafty.e("TouchZones")
 	movementButtons()
+
+
+
 	createGreyTiles(getLevel())
  	var redSquare = create_tile(0, 0)
 		redSquare.alpha = 0;
@@ -109,7 +112,9 @@ Crafty.defineScene("Game", function() {
 			h: 48
 		})
 		.origin("center")
-	Crafty.bind("UserAction", function (action) {
+
+ 
+	generator.bind("UserAction", function (action) {
 			var x = generator.x / TSIZE_X;
 			var y = generator.y / TSIZE_Y;
 
@@ -130,7 +135,7 @@ Crafty.defineScene("Game", function() {
 				create_tile(x, y + 1)
 				patternChecker.recordAction(0, 1)
 		    } else if(action == "RESET") {
-         		Crafty.scene('Game');
+		    	Crafty.scene('Game');
          	}
 		    if(patternChecker.checkWin()) {
 		    	currentLevel += 1;
@@ -144,6 +149,6 @@ Crafty.defineScene("Game", function() {
 		    }
 		})
 
-	user_input_to_action_mapper_listener();
+	user_input_to_action_mapper_listener(generator);
 	setupCamera(generator);
 });

@@ -1,11 +1,12 @@
 var wincheckdebug = false;
 
 Crafty.c("PatternFormer", {
-	_gridSize : 30,
-	px : 1,
-	py : 1,
 
 	init : function () {
+		this.requires("2D, DOM")
+		this._gridSize = 30,
+		this.px = 1,
+		this.py = 1,
 		this._pattern = [],
 		this.px = this._gridSize / 2;
 		this.py = this._gridSize / 2;
