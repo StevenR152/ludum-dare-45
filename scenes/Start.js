@@ -3,7 +3,7 @@ Crafty.defineScene("Start", function () {
     Crafty.e("StartBackground") 
   
     Crafty.e("2D, DOM, Text")
-          .attr({ w: 0, h: 50, x: 270, y: 120 })
+          .attr({ w: 0, h: 50, x: 270, y: 70 })
           .text("Loading...")
           .textFont({ size: '20px', weight: 'bold' })
           .textAlign("center")
@@ -15,9 +15,9 @@ Crafty.defineScene("Start", function () {
         if(Crafty.mobile) {
           Crafty.scene('Controls');
         } else {
-          Crafty.scene('Game')
+          Crafty.scene('GameMode')
         }
-       }, 2000);
+       }, 3000);
     },  function () {
       console.log("Crafty Load Issue");
     },  function (e) {

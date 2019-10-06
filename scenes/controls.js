@@ -17,10 +17,10 @@ Crafty.defineScene("Controls", function () {
 		 	h: GAME_SCREEN_HEIGHT
 		 })
 		.bind("KeyDown", function () {
-			Crafty.scene("Game")
+			Crafty.scene("Difficulty")
 		})
 		.bind("Click", function () {
-			Crafty.scene("Game")
+			Crafty.scene("Difficulty")
 		})
 
 })

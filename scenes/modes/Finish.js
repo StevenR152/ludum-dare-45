@@ -35,7 +35,7 @@ function user_input_to_action_mapper_listener(entity) {
 	});
 }
 
-Crafty.defineScene("Game", function() {
+Crafty.defineScene("Finish", function() {
 	Crafty.e("Background")
 	// Crafty.e("TouchZones")
 	if(Crafty.mobile)
