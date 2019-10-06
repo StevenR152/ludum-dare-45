@@ -1,4 +1,4 @@
-var currentLevel = 5;
+var currentLevel = 1;
 var levels = [
 	{
 		"map" : [

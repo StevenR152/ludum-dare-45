@@ -1,8 +1,7 @@
-Crafty.defineScene("Game", function() {
-	var level = getLevel().map;
-	var levelStart = getLevel().start
+function createGreyTiles(levelObject) {
+	var level = levelObject.map;
+	var levelStart = levelObject.start
 
-	Crafty.e("Background")
 	var lx = levelStart.x;
 	var ly = levelStart.y;
 
@@ -18,10 +17,16 @@ Crafty.defineScene("Game", function() {
 				tile.solidify()
 		}
 	}
+}
 
+Crafty.defineScene("Game", function() {
+	Crafty.e("Background")
+
+	createGreyTiles(getLevel())
 	var redSquare = create_tile(0, 0)
-	redSquare.alpha = 0;
-	redSquare.trigger("Spawn")
+		redSquare.alpha = 0;
+		redSquare.trigger("Spawn")
+
 	var patternChecker = Crafty.e("PatternFormer");
 	var generator = Crafty.e("2D, DOM, Keyboard, Color")
 		// .color("red")
