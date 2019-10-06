@@ -45,12 +45,12 @@ function movementButtons() {
 				y: 200,
 				w: buttonSize,
 				h: buttonSize,
-				alpha: 0.0
+				alpha: 0.2
 			})
 			this.fixedPosition(GAME_SCREEN_WIDTH - buttonSize - 30, GAME_SCREEN_HEIGHT/2 - buttonSize/2)
-			this.color("blue")
+			this.color("lightblue")
 			Crafty.one("CameraAnimationDone", function() {
-		    	this.tween({alpha: 0.08}, 2000)
+		    	this.tween({alpha: 0.00}, 2000)
 			}.bind(this));
 		},
 
