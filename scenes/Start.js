@@ -13,7 +13,7 @@ Crafty.defineScene("Start", function () {
   	Crafty.load(gameAssets, function(){
        setTimeout(function () {
         if(Crafty.mobile) {
-         Crafty.scene('Controls');
+          Crafty.scene('Controls');
         } else {
           Crafty.scene('Game')
         }
