@@ -38,7 +38,8 @@ function user_input_to_action_mapper_listener(entity) {
 Crafty.defineScene("Game", function() {
 	Crafty.e("Background")
 	// Crafty.e("TouchZones")
-	movementButtons()
+	if(Crafty.mobile)
+		movementButtons()
 
 
 
