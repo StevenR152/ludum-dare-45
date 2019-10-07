@@ -1,6 +1,6 @@
 Crafty.defineScene("InstructionsMobile", function () {
 	Crafty.e("MobileInstructions")
-	Crafty.background("#38353B");
+	Crafty.background("#38353B");Crafty.audio.play("ambient-background-slow", -1, 1);
 
 	movementButtons();
 	Crafty("MovementButton").each(function () {

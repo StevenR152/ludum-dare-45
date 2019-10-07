@@ -1,7 +1,7 @@
 Crafty.defineScene("InstructionsDesktop", function () {
 	Crafty.e("DesktopInstructions")
 	Crafty.background("#38353B");
-
+Crafty.audio.play("ambient-background-slow", -1, 1);
 	movementButtons();
 	Crafty("MovementButton").each(function () {
 		this.w = this.w;
