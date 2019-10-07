@@ -92,6 +92,7 @@ Crafty.defineScene("Game", function() {
 
 		    	if(currentLevel <= levels.length) {
 		    		Crafty.log("Next level loading...")
+		    		ga('send', 'event', "level", "levelchange", "levelnumber", currentLevel - 1, {"random":"test"});
          			Crafty.scene('Game');
 		    	} else {
 		    		Crafty.log("End of Game")
