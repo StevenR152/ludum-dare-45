@@ -2,5 +2,5 @@
 Theme: Start with Nothing
 
 Available here:
-- [https://s3-us-west-1.amazonaws.com/ludum-dare-45/master/index.html](
-https://s3-us-west-1.amazonaws.com/ludum-dare-45/master/index.html)
+- [http://ludum-dare-45.s3.eu-west-2.amazonaws.com/master/index.html](
+http://ludum-dare-45.s3.eu-west-2.amazonaws.com/master/index.html)
